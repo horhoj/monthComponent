@@ -1,4 +1,4 @@
-export const getInitialArray = (endValue: number): number[] => {
+export const getInitialArray = (endValue) => {
   const result = [];
   for (let i = 1; i <= endValue; i++) {
     result.push(i);
@@ -6,6 +6,6 @@ export const getInitialArray = (endValue: number): number[] => {
   return result;
 };
 
-export const check = (val: number, arr: number[]): boolean => {
+export const check = (val, arr) => {
   return arr.find((item) => val === item) !== undefined;
 };

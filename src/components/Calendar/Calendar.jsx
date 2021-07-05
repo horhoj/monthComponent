@@ -1,6 +1,5 @@
 import React from 'react';
 import styled, { css } from 'styled-components';
-import { CalendarProps } from './types';
 import { getInitialArray, check } from './helpers';
 
 const Wrapper = styled.div`
@@ -16,32 +15,32 @@ const commonBlockStyle = css`
   border-radius: 4px;
 `;
 
-const WrapperBlock = styled.div<{ pt: number; pb: number }>`
+const WrapperBlock = styled.div`
   display: flex;
   padding-top: ${({ pt }) => pt}px;
   padding-bottom: ${({ pb }) => pb}px;
   justify-content: center;
 `;
 
-const BlockL1 = styled.div<{ isActive: boolean }>`
+const BlockL1 = styled.div`
   background-color: ${({ isActive }) => (isActive ? 'red' : 'gray')};
   height: 30px;
   ${commonBlockStyle}
 `;
 
-const BlockL2 = styled.div<{ isActive: boolean }>`
+const BlockL2 = styled.div`
   background-color: ${({ isActive }) => (isActive ? 'green' : 'gray')};
   height: 90px;
   ${commonBlockStyle}
 `;
 
-const BlockL3 = styled.div<{ isActive: boolean }>`
+const BlockL3 = styled.div`
   background-color: ${({ isActive }) => (isActive ? 'black' : 'gray')};
   height: 10px;
   ${commonBlockStyle}
 `;
 
-const BlockL4 = styled.div<{ isActive: boolean }>`
+const BlockL4 = styled.div`
   background-color: ${({ isActive }) => (isActive ? 'yellow' : 'gray')};
   height: 60px;
   ${commonBlockStyle}
@@ -55,15 +54,13 @@ const BlockDay = styled.div`
   align-items: center;
 `;
 
-const handleClkCreator =
-  (level: 1 | 2 | 3 | 4, item: number) =>
-  (e: React.SyntheticEvent<HTMLDivElement>) => {
-    e.preventDefault();
-    const msg = `вы кликнули по ряду с номером ${level} и элементу соответствующему ${item} дню`;
-    alert(msg);
-  };
+const handleClkCreator = (level, item) => (e) => {
+  e.preventDefault();
+  const msg = `вы кликнули по ряду с номером ${level} и элементу соответствующему ${item} дню`;
+  alert(msg);
+};
 
-export const Calendar: React.FC<CalendarProps> = ({ data }) => {
+export const Calendar = ({ data }) => {
   const arr = getInitialArray(data.colDays);
   return (
     <Wrapper>
