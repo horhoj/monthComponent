@@ -14,6 +14,9 @@ const Container = styled.div`
 const initialData: Data = {
   colDays: 31,
   itemsL1: [1, 2, 3, 15, 16],
+  itemsL2: [3, 4, 6, 7, 25, 27],
+  itemsL3: [7, 9, 13, 14, 26, 27, 31],
+  itemsL4: [1, 2, 12, 16, 17, 31],
 };
 
 export const App: React.FC = () => {

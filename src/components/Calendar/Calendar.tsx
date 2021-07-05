@@ -1,7 +1,7 @@
 import React from 'react';
 import styled from 'styled-components';
 import { CalendarProps } from './types';
-import { getInitialArray, checkL1 } from './helpers';
+import { getInitialArray, check } from './helpers';
 
 const Wrapper = styled.div`
   border: 1px solid red;
@@ -24,6 +24,30 @@ const BlockL1 = styled.div<{ isActive: boolean }>`
   margin: 0 5px;
 `;
 
+const BlockL2 = styled.div<{ isActive: boolean }>`
+  background-color: ${({ isActive }) => (isActive ? 'green' : 'gray')};
+  height: 90px;
+  border-radius: 4px;
+  width: 10px;
+  margin: 0 5px;
+`;
+
+const BlockL3 = styled.div<{ isActive: boolean }>`
+  background-color: ${({ isActive }) => (isActive ? 'black' : 'gray')};
+  height: 10px;
+  border-radius: 4px;
+  width: 10px;
+  margin: 0 5px;
+`;
+
+const BlockL4 = styled.div<{ isActive: boolean }>`
+  background-color: ${({ isActive }) => (isActive ? 'yellow' : 'gray')};
+  height: 60px;
+  border-radius: 4px;
+  width: 10px;
+  margin: 0 5px;
+`;
+
 const BlockDay = styled.div`
   width: 20px;
   font-size: 10px;
@@ -38,7 +62,22 @@ export const Calendar: React.FC<CalendarProps> = ({ data }) => {
     <Wrapper>
       <WrapperBlock pb={5} pt={5}>
         {arr.map((item) => (
-          <BlockL1 key={item} isActive={checkL1(item, data)} />
+          <BlockL1 key={item} isActive={check(item, data.itemsL1)} />
+        ))}
+      </WrapperBlock>
+      <WrapperBlock pb={5} pt={5}>
+        {arr.map((item) => (
+          <BlockL2 key={item} isActive={check(item, data.itemsL2)} />
+        ))}
+      </WrapperBlock>
+      <WrapperBlock pb={5} pt={5}>
+        {arr.map((item) => (
+          <BlockL3 key={item} isActive={check(item, data.itemsL3)} />
+        ))}
+      </WrapperBlock>
+      <WrapperBlock pb={5} pt={5}>
+        {arr.map((item) => (
+          <BlockL4 key={item} isActive={check(item, data.itemsL4)} />
         ))}
       </WrapperBlock>
       <WrapperBlock pb={5} pt={5}>

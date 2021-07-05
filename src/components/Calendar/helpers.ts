@@ -1,5 +1,3 @@
-import { Data } from './types';
-
 export const getInitialArray = (endValue: number): number[] => {
   const result = [];
   for (let i = 1; i <= endValue; i++) {
@@ -8,6 +6,6 @@ export const getInitialArray = (endValue: number): number[] => {
   return result;
 };
 
-export const checkL1 = (val: number, data: Data): boolean => {
-  return data.itemsL1.find((item) => val === item) !== undefined;
+export const check = (val: number, arr: number[]): boolean => {
+  return arr.find((item) => val === item) !== undefined;
 };
