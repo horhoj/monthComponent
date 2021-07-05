@@ -1,5 +1,5 @@
 import React from 'react';
-import styled from 'styled-components';
+import styled, { css } from 'styled-components';
 import { CalendarProps } from './types';
 import { getInitialArray, check } from './helpers';
 
@@ -7,6 +7,13 @@ const Wrapper = styled.div`
   border: 1px solid red;
   border-radius: 5px;
   width: 700px;
+`;
+
+const commonBlockStyle = css`
+  width: 10px;
+  margin: 0 5px;
+  cursor: pointer;
+  border-radius: 4px;
 `;
 
 const WrapperBlock = styled.div<{ pt: number; pb: number }>`
@@ -19,37 +26,25 @@ const WrapperBlock = styled.div<{ pt: number; pb: number }>`
 const BlockL1 = styled.div<{ isActive: boolean }>`
   background-color: ${({ isActive }) => (isActive ? 'red' : 'gray')};
   height: 30px;
-  border-radius: 4px;
-  width: 10px;
-  margin: 0 5px;
-  cursor: pointer;
+  ${commonBlockStyle}
 `;
 
 const BlockL2 = styled.div<{ isActive: boolean }>`
   background-color: ${({ isActive }) => (isActive ? 'green' : 'gray')};
   height: 90px;
-  border-radius: 4px;
-  width: 10px;
-  margin: 0 5px;
-  cursor: pointer;
+  ${commonBlockStyle}
 `;
 
 const BlockL3 = styled.div<{ isActive: boolean }>`
   background-color: ${({ isActive }) => (isActive ? 'black' : 'gray')};
   height: 10px;
-  border-radius: 4px;
-  width: 10px;
-  margin: 0 5px;
-  cursor: pointer;
+  ${commonBlockStyle}
 `;
 
 const BlockL4 = styled.div<{ isActive: boolean }>`
   background-color: ${({ isActive }) => (isActive ? 'yellow' : 'gray')};
   height: 60px;
-  border-radius: 4px;
-  width: 10px;
-  margin: 0 5px;
-  cursor: pointer;
+  ${commonBlockStyle}
 `;
 
 const BlockDay = styled.div`
