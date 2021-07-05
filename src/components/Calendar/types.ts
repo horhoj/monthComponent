@@ -4,5 +4,5 @@ export interface CalendarProps {
 
 export interface Data {
   colDays: number;
-  items: number[];
+  itemsL1: number[];
 }

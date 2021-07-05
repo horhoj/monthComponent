@@ -4,13 +4,16 @@ import { Calendar } from './components/Calendar';
 import { Data } from './components/Calendar/types';
 
 const Container = styled.div`
-  margin: 0 auto;
+  margin: 30px auto 0;
   width: 1024px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 `;
 
 const initialData: Data = {
   colDays: 31,
-  items: [1, 2, 3, 15, 16],
+  itemsL1: [1, 2, 3, 15, 16],
 };
 
 export const App: React.FC = () => {

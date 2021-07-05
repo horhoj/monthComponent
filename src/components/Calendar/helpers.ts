@@ -8,6 +8,6 @@ export const getInitialArray = (endValue: number): number[] => {
   return result;
 };
 
-export const check = (val: number, data: Data): boolean => {
-  return data.items.find((item) => val === item) !== undefined;
+export const checkL1 = (val: number, data: Data): boolean => {
+  return data.itemsL1.find((item) => val === item) !== undefined;
 };
